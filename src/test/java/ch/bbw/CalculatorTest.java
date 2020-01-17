@@ -19,8 +19,20 @@ public class CalculatorTest {
     }
 
     @Test
+    public void testSumIsNegative() {
+        System.out.println("[INFO]\n[INFO] Asserting that 10 + -25 is equal to -15\n[INFO]");
+        assertTrue(calculator.sum(10, -25) == -15);
+    }
+
+    @Test
     public void testSubtractIsPositive() {
         System.out.println("[INFO]\n[INFO] Asserting that 25 - 10 is equal to 15\n[INFO]");
         assertTrue(calculator.subtract(25, 10) == 15);
+    }
+
+    @Test
+    public void testSubtractIsNegative() {
+        System.out.println("[INFO]\n[INFO] Asserting that 10 - 25 is equal to -15\n[INFO]");
+        assertTrue(calculator.subtract(10, 25) == -15);
     }
 }
