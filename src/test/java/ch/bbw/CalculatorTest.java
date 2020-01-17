@@ -18,6 +18,10 @@ public class CalculatorTest {
         calculator = new Calculator();
     }
 
+    /**
+     * Sum tests
+     */
+
     @Test
     public void testSumTwoPositive() {
         System.out.println("[INFO]\n[INFO] Asserting that 10 + 25 is equal to 35\n[INFO]");
@@ -31,7 +35,53 @@ public class CalculatorTest {
     }
 
     @Test
+    public void testSumTwoNegative() {
+        System.out.println("[INFO]\n[INFO] Asserting that -10 + -25 is equal to -35\n[INFO]");
+        assertTrue(calculator.sum(-10,-25) == -35);
+    }
+
+    @Test
+    public void testSumZeroAndPositive() {
+        System.out.println("[INFO]\n[INFO] Asserting that 0 + 25 is equal to 25\n[INFO]");
+        assertTrue(calculator.sum(0, 25) == 25);
+    }
+
+    @Test
+    public void testSumZeroAndNegative() {
+        System.out.println("[INFO]\n[INFO] Asserting that 0 + -25 is equal to -25\n[INFO]");
+        assertTrue(calculator.sum(0, -25) == -25);
+    }
+
+    @Test
+    public void testSumMaxValueAndMinValue() {
+        System.out.println("[INFO]\n[INFO] Asserting that Integer.MAX_VALUE + -Integer.MIN_VALUE is equal to -1\n[INFO]");
+        assertTrue(calculator.sum(Integer.MAX_VALUE, -Integer.MIN_VALUE) == -1);
+    }
+
+    @Test
+    public void testSumMinValueAndPositive() {
+        System.out.println("[INFO]\n[INFO] Asserting that Integer.MIN_VALUE + 3 is equal to -2147483645\n[INFO]");
+        assertTrue(calculator.sum(Integer.MIN_VALUE, 3) == -2147483645);
+    }
+
+    @Test
+    public void testSumMaxValueAndNegative() {
+        System.out.println("[INFO]\n[INFO] Asserting that Integer.MAX_VALUE + -3 is equal to 2147483644\n[INFO]");
+        assertTrue(calculator.sum(Integer.MAX_VALUE, -3) == 2147483644);
+    }
+
+    /**
+     * Subtract tests
+     */
+
+    @Test
     public void testSubtractTwoPositive() {
+        System.out.println("[INFO]\n[INFO] Asserting that 25 - 10 is equal to 15\n[INFO]");
+        assertTrue(calculator.subtract(25, 10) == 15);
+    }
+
+    @Test
+    public void testSubtractTwoPositiveAboveZero() {
         System.out.println("[INFO]\n[INFO] Asserting that 25 - 10 is equal to 15\n[INFO]");
         assertTrue(calculator.subtract(25, 10) == 15);
     }
@@ -41,6 +91,40 @@ public class CalculatorTest {
         System.out.println("[INFO]\n[INFO] Asserting that 10 - 25 is equal to -15\n[INFO]");
         assertTrue(calculator.subtract(10, 25) == -15);
     }
+
+    @Test
+    public void testSubtractTwoNegative() {
+        System.out.println("[INFO]\n[INFO] Asserting that -15 - -15 is equal to 0\n[INFO]");
+        assertTrue(calculator.subtract(-15, -15) == 0);
+    }
+
+    @Test
+    public void testSubtractPositiveAndNegative() {
+        System.out.println("[INFO]\n[INFO] Asserting that 15 - -5 is equal to 20\n[INFO]");
+        assertTrue(calculator.subtract(15, -5) == 20);
+    }
+
+    @Test
+    public void testSubtractMaxValueMinValue() {
+        System.out.println("[INFO]\n[INFO] Asserting that Integer.MAX_VALUE - Integer.MIN_VALUE is equal to -1\n[INFO]");
+        assertTrue(calculator.subtract(Integer.MAX_VALUE, Integer.MAX_VALUE) == 0);
+    }
+
+    @Test
+    public void testSubtractMaxValueAndPositive() {
+        System.out.println("[INFO]\n[INFO] Asserting that Integer.MAX_VALUE - 3 is equal to 2147483644\n[INFO]");
+        assertTrue(calculator.subtract(Integer.MAX_VALUE, 3) == 2147483644);
+    }
+
+    @Test
+    public void testSubtractTwoZero() {
+        System.out.println("[INFO]\n[INFO] Asserting that 0 - 0 is equal to 0\n[INFO]");
+        assertTrue(calculator.subtract(0,0) == 0);
+    }
+
+    /**
+     * Division tests
+     */
 
     @Test(expected = ArithmeticException.class)
     public void testDivisionWhichThrowsError() {
@@ -57,7 +141,7 @@ public class CalculatorTest {
 
     @Test
     public void protectedTestSumTwoPositive() {
-        System.out.println("[INFO]\n[INFO]Asserting that 10 + 25 is equal to 35 and the protected method is accessible\n[INFO]");
+        System.out.println("[INFO]\n[INFO] Asserting that 10 + 25 is equal to 35 and the protected method is accessible\n[INFO]");
         assertTrue(calculator.protectedSum(10,25) == 35);
     }
 
