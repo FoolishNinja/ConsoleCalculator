@@ -8,5 +8,5 @@ public class Calculator {
     public int sum(int sum1, int sum2) {
         return sum1 + sum2;
     }
-    public int subtract(int sum1, int sum2) { return 0; }
+    public int subtract(int sum1, int sum2) { return sum1 - sum2; }
 }
