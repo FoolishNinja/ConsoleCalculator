@@ -19,25 +19,25 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testSumIsPositive() {
+    public void testSumTwoPositive() {
         System.out.println("[INFO]\n[INFO] Asserting that 10 + 25 is equal to 35\n[INFO]");
         assertTrue(calculator.sum(10, 25) == 35);
     }
 
     @Test
-    public void testSumIsNegative() {
+    public void testSumPositiveAndNegative() {
         System.out.println("[INFO]\n[INFO] Asserting that 10 + -25 is equal to -15\n[INFO]");
         assertTrue(calculator.sum(10, -25) == -15);
     }
 
     @Test
-    public void testSubtractIsPositive() {
+    public void testSubtractTwoPositive() {
         System.out.println("[INFO]\n[INFO] Asserting that 25 - 10 is equal to 15\n[INFO]");
         assertTrue(calculator.subtract(25, 10) == 15);
     }
 
     @Test
-    public void testSubtractIsNegative() {
+    public void testSubtractTwoPositiveBelowZero() {
         System.out.println("[INFO]\n[INFO] Asserting that 10 - 25 is equal to -15\n[INFO]");
         assertTrue(calculator.subtract(10, 25) == -15);
     }
@@ -56,7 +56,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void protectedTestSumIsPositive() {
+    public void protectedTestSumTwoPositive() {
         System.out.println("[INFO]\n[INFO]Asserting that 10 + 25 is equal to 35 and the protected method is accessible\n[INFO]");
         assertTrue(calculator.protectedSum(10,25) == 35);
     }
