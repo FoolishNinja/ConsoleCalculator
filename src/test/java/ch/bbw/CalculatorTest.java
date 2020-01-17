@@ -54,4 +54,18 @@ public class CalculatorTest {
         //assertTrue(calculator.division(10,0) == Double.POSITIVE_INFINITY);
         assertTrue(calculator.division(10,5) == 2);
     }
+
+    @Test
+    public void protectedTestSumIsPositive() {
+        System.out.println("[INFO]\n[INFO]Asserting that 10 + 25 is equal to 35 and the protected method is accessible\n[INFO]");
+        assertTrue(calculator.protectedSum(10,25) == 35);
+    }
+
+    /**
+     * Testing private methods may be an indication that those methods should be moved into another class to promote reusability.
+     * There are some ways to test the anyways tough:
+     * - PrivilegedAccessor
+     * - Dp4j
+     * These are both jar packages that allow you to test private methods.
+     */
 }
