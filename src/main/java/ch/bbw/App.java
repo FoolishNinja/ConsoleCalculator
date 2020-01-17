@@ -1,8 +1,8 @@
 package ch.bbw;
 
 /**
- * Hello world!
- *
+ * @author Carlo Schmid
+ * @version 17.01.2020
  */
 public class App 
 {
