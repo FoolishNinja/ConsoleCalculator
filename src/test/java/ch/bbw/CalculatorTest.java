@@ -2,6 +2,7 @@ package ch.bbw;
 
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -10,7 +11,12 @@ import org.junit.Test;
  * @version 17.01.2020
  */
 public class CalculatorTest {
-    private Calculator calculator = new Calculator();
+    private Calculator calculator;
+
+    @Before
+    public void setup() {
+        calculator = new Calculator();
+    }
 
     @Test
     public void testSumIsPositive() {
