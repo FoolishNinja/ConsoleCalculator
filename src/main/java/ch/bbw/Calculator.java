@@ -10,4 +10,5 @@ public class Calculator {
     }
     public int subtract(int sum1, int sum2) { return sum1 - sum2; }
     public double division(int numerator, int denominator) { return numerator / denominator; }
+    protected int protectedSum(int sum1, int sum2) { return sum1 + sum2; }
 }
