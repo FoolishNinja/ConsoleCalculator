@@ -9,5 +9,5 @@ public class Calculator {
         return sum1 + sum2;
     }
     public int subtract(int sum1, int sum2) { return sum1 - sum2; }
-    public double division(double numerator, double denominator) { return numerator / denominator; }
+    public double division(int numerator, int denominator) { return numerator / denominator; }
 }

@@ -41,4 +41,17 @@ public class CalculatorTest {
         System.out.println("[INFO]\n[INFO] Asserting that 10 - 25 is equal to -15\n[INFO]");
         assertTrue(calculator.subtract(10, 25) == -15);
     }
+
+    @Test(expected = ArithmeticException.class)
+    public void testDivisionWhichThrowsError() {
+        System.out.println("[INFO]\n[INFO] Asserting that 10 / 0 throws an exception\n[INFO]");
+        assertTrue(calculator.division(10,0) == Double.POSITIVE_INFINITY);
+    }
+
+    @Test
+    public void testDivisionWhichMustNotThrowError() throws ArithmeticException {
+        System.out.println("[INFO]\n[INFO] Asserting that 10 / 0 throws an exception\n[INFO]");
+        //assertTrue(calculator.division(10,0) == Double.POSITIVE_INFINITY);
+        assertTrue(calculator.division(10,5) == 2);
+    }
 }
