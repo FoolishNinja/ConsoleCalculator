@@ -29,6 +29,12 @@ public class CalculatorTest {
     }
 
     @Test
+    public void protectedTestSumTwoPositive() {
+        System.out.println("[INFO]\n[INFO] Asserting that 10 + 25 is equal to 35 and the protected method is accessible\n[INFO]");
+        assertTrue(calculator.protectedSum(10,25) == 35);
+    }
+
+    @Test
     public void testSumPositiveAndNegative() {
         System.out.println("[INFO]\n[INFO] Asserting that 10 + -25 is equal to -15\n[INFO]");
         assertTrue(calculator.sum(10, -25) == -15);
@@ -140,9 +146,45 @@ public class CalculatorTest {
     }
 
     @Test
-    public void protectedTestSumTwoPositive() {
-        System.out.println("[INFO]\n[INFO] Asserting that 10 + 25 is equal to 35 and the protected method is accessible\n[INFO]");
-        assertTrue(calculator.protectedSum(10,25) == 35);
+    public void testDivisionPositiveAndNegative() {
+        System.out.println("[INFO]\n[INFO] Asserting that 100 / -25 is equal to -4\n[INFO]");
+        assertTrue(calculator.division(100, -25) == -4);
+    }
+
+    @Test
+    public void testDivisionTwoNegative() {
+        System.out.println("[INFO]\n[INFO] Asserting that -100 / -25 is equal to 4\n[INFO]");
+        assertTrue(calculator.division(-100, -25) == 4);
+    }
+
+    @Test
+    public void testDivisionTwoPositive() {
+        System.out.println("[INFO]\n[INFO] Asserting that 100 / 25 is equal to 4\n[INFO]");
+        assertTrue(calculator.division(100, 25) == 4);
+    }
+
+    @Test
+    public void testDivisionZeroAndPositive() {
+        System.out.println("[INFO]\n[INFO] Asserting that 0 / 25 is equal to 0\n[INFO]");
+        assertTrue(calculator.division(0, 25) == 0);
+    }
+
+    @Test
+    public void testDivisionNegativeAndPositive() {
+        System.out.println("[INFO]\n[INFO] Asserting that -100 / 25 is qual to -4\n[INFO]");
+        assertTrue(calculator.division(-100, 25) == -4);
+    }
+
+    @Test
+    public void testDivisionZeroAndNegative() {
+        System.out.println("[INFO]\n[INFO] Asserting that 0 / -25 is qual to 0\n[INFO]");
+        assertTrue(calculator.division(0, -25) == 0);
+    }
+
+    @Test (expected = ArithmeticException.class)
+    public void testDivisionZeroAndZero() {
+        System.out.println("[INFO]\n[INFO] Asserting that 0 / 0 is throws an exception\n[INFO]");
+        assertTrue(calculator.division(0,0) == Double.POSITIVE_INFINITY);
     }
 
     /**
