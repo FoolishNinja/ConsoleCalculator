@@ -1,3 +1,9 @@
+before_deploy:
+  # Set up git user name and tag this commit
+  - git config --local user.name "Carlo Schmid"
+  - git config --local user.email "carlo.schmid1@swisscom.com"
+  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
+  - git tag $TRAVIS_TAG
 language: java
 sudo: false
 script: mvn install
@@ -8,4 +14,3 @@ deploy:
   file: "/home/travis/.m2/repository/ch/bbw/02_ConsoleCalculatorWithMaven/1.0-SNAPSHOT/02_ConsoleCalculatorWithMaven-1.0-SNAPSHOT.jar"
   on:
     repo: FoolishNinja/ConsoleCalculator
-  draft: true
